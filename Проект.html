@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Слайдер</title>
+    <style>
+	
+      * {
+      box-sizing: border-box;
+      }
+      .slider {
+      width: 300px;
+      text-align: center;
+      overflow: hidden; 
+      }
+      .slides {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      overflow-y: hidden;
+      }
+      
+	  
+      .slides div {
+      scroll-snap-align: start;
+      flex-shrink: 0;
+      width: 300px;
+      height: 300px;
+      margin-right: 50px;
+      border-radius: 10px;
+      background: #eee;
+      transform-origin: center center;
+      transform: scale(1);
+      transition: transform 0.5s;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 100px;
+      }
+	  
+      .slider a {
+      display: inline-flex; /*элементы внутри inline сам контейнер flex */
+      width: 1.5rem;
+      height: 1.5rem;
+      background: white;
+      text-decoration: none;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin: 0 0 0.5rem 0;
+      }
+	  
+	  
+      .slider a:active { /*Стиль для активной кнопки*/
+      top: 1px;
+      color: #1c87c9;
+      }
+	  	  
+      .slider a:focus { /*Стиль для кнопки на которую наводят курсор*/
+      background: #eee;
+      }  
+     
+      }
+      html, body {
+      height: 100%;
+      overflow: hidden; /*то что вылазиет за поля блочного элемента скрыто*/
+      }
+      body {
+      display: flex; /*сделали  flex элементом */
+      align-items: center;
+      justify-content: center; 
+      background: #1c87c9;
+      font-family: Ropa Sans;
+      }
+	  
+    </style>
+  </head>
+  
+  <body>
+  
+    <div class="slider">
+		<a href="#slide-1"> 1 </a>
+		<a href="#slide-2">2</a>
+		<a href="#slide-3">3</a>
+		<a href="#slide-4">4</a>
+		<a href="#slide-5">5</a>
+	  
+      <div class="slides">
+	  
+      <div id="slide-1"> <img src="https://preview.redd.it/k7ibmv0d7ra71.jpg?width=320&crop=smart&auto=webp&s=bb6b35af5eea3783124b875fd9702a6e7b87e616"> </div>
+      <div id="slide-2"> <img src="http://1.bp.blogspot.com/-fXOawr98U-c/Uk2rofkwHjI/AAAAAAAAAJc/s6oVgHH0r8M/s640/Awwww+!.jpg"> </div>
+      <div id="slide-3"> <img src="https://phonoteka.org/uploads/posts/2021-06/1624140183_54-phonoteka_org-p-oboi-na-android-vertikalnie-krasivo-56.jpg"> </div>
+      <div id="slide-4"> <img src="https://mobimg.b-cdn.net/v3/fetch/45/4502bf246ea82f10d52e6c0c15132a2d.jpeg?h=900&r=0.5"> </div>
+      <div id="slide-5"> <img src="https://mota.ru/upload/resize/640/960/upload/wallpapers/source/2010/01/09/14/04/22977/mota_ru_0092711-ff2.jpg"> </div>
+	  
+	  </div>
+	  
+	</div>
+		
+  </body>
+</html>
